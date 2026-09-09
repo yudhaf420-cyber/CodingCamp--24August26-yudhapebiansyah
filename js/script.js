@@ -45,7 +45,7 @@ function updateTimeAndDate() {
     if (userName && userName.trim() !== '') {
         document.getElementById('greeting-text').textContent = `${greeting}, ${userName}`;
     } else {
-        document.getElementById('greeting-text').textContent = `${greeting}! Set your name above`;
+        document.getElementById('greeting-text').textContent = `${greeting}! Friend`;
     }
     document.getElementById('greeting-emoji').textContent = emoji;
 }
