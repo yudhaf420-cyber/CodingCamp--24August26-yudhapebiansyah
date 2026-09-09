@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "1.0.0",
+  "dataModelVersion": 1,
+  "id": "sess_5ef9bfab-c1e4-4152-81dd-61169ed5373e",
+  "title": "New Session",
+  "agentMode": "vibe",
+  "workspacePaths": [
+    "c:\\CodingCamp-07September26-yudhapebiansyah"
+  ],
+  "rootPaths": [
+    "c:\\CodingCamp-07September26-yudhapebiansyah"
+  ],
+  "createdAt": "2026-09-09T10:48:31.377Z",
+  "lastModifiedAt": "2026-09-09T10:48:38.038Z",
+  "modelId": "claude-sonnet-4.5",
+  "autopilot": true,
+  "semanticReviewEnabled": true,
+  "disableAutoCompaction": false,
+  "ftaEnabled": false,
+  "workflowsEnabled": false,
+  "specPlanEnabled": false,
+  "specWorkflow": "quick",
+  "specSkipClarificationEnabled": true,
+  "_meta": {
+    "kiro": {
+      "policyPreset": [
+        "edit-workspace"
+      ],
+      "shellType": "powershell"
+    }
+  }
+}

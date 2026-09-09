@@ -1,0 +1,30 @@
+{
+  "schemaVersion": "1.0.0",
+  "dataModelVersion": 1,
+  "id": "sess_36f88a0d-de7f-48c6-a402-0975b1630b09",
+  "title": "New Session",
+  "agentMode": "vibe",
+  "workspacePaths": [
+    "c:\\Users\\Dhuy\\revou-coding-camp-html-css"
+  ],
+  "rootPaths": [
+    "c:\\Users\\Dhuy\\revou-coding-camp-html-css"
+  ],
+  "createdAt": "2026-09-03T13:47:46.197Z",
+  "lastModifiedAt": "2026-09-03T13:47:49.971Z",
+  "semanticReviewEnabled": true,
+  "disableAutoCompaction": false,
+  "ftaEnabled": false,
+  "workflowsEnabled": false,
+  "specPlanEnabled": false,
+  "specWorkflow": "quick",
+  "specSkipClarificationEnabled": true,
+  "_meta": {
+    "kiro": {
+      "policyPreset": [
+        "edit-workspace"
+      ],
+      "shellType": "powershell"
+    }
+  }
+}

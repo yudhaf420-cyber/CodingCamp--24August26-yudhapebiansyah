@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta ch
+    arset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List Life Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- Header % Greeting Section -->
+    <header>
+     <h1 id="time-display">00:00:00</h1>
+     <p id="date-display">Thursday, September 10, 2026</p>
+     <h2 id="greeting-text">Good Morning, Yudha</h2>
+     </header>
+
+     <!-- Main Content Area -->
+      <main>
+
+        <!-- 1. Focus Timer Section -->
+         <section>
+            <h3>Focus Timer</h3>
+            <p id="timer-display">30:00</p>
+            <nav> 
+                <button id="start-btn" type="button">Start</button>
+                <button id="stop-btn" type="button">Stop</button>
+                <button id="reset-btn" type="button">Reset</button>
+            </nav>
+         </section>
+
+         <hr>
+
+         <!-- 2. To-Do List Section -->
+          <section>
+            <h3>Task</h3>
+            <form id="todo-form">
+                <label for="todo-input">Add a new task...</label>
+                <input type="text" id="todo-input" placeholder="Ketik tugas disini..." required>
+                <button type="submit">Add</button>
+            </form>
+
+            <h4>Daftar Tugas:</h4>
+        <ul id="todo-list">
+            <!-- Item tugas akan dirender secara dinamis oleh JS di sini -->
+        </ul>
+          </section>
+
+          <hr>
+
+          <!-- 3. Quick Links Section -->
+           <section>
+            <h3>Quick Links</h3>
+            <form id="link-form">
+                <label for="link-name">Link name:</label>
+                <input type="text" id="link-name" placeholder="" required>
+
+                <label for="link-url">URL:</label>
+                <input type="url" id="link-url" placeholder="" required>
+
+                <button type="add-link">Add  Link</button>
+            </form>
+
+            <h4>Daftar Link Favorit:</h4>
+            <nav id="links-container">
+                <!-- Tombol tautan cepat akan dimasukkan oleh JS di sini -->
+            </nav>
+           </section>
+
+        </main>
+        
+        <!-- Tag pembuka untuk dihubungkan ke file Javascript nantinya -->
+         <script src="js/script.js"></script>    
+</body>
+</html>

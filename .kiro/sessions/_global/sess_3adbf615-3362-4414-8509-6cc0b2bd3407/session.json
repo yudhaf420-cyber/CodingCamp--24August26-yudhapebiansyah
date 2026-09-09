@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "1.0.0",
+  "dataModelVersion": 1,
+  "id": "sess_3adbf615-3362-4414-8509-6cc0b2bd3407",
+  "title": "New Session",
+  "agentMode": "vibe",
+  "workspacePaths": [],
+  "rootPaths": [],
+  "createdAt": "2026-09-02T13:01:59.265Z",
+  "lastModifiedAt": "2026-09-02T15:15:32.122Z",
+  "semanticReviewEnabled": true,
+  "disableAutoCompaction": false,
+  "ftaEnabled": false,
+  "workflowsEnabled": false,
+  "specPlanEnabled": false,
+  "specWorkflow": "quick",
+  "specSkipClarificationEnabled": true,
+  "_meta": {
+    "kiro": {
+      "policyPreset": [
+        "edit-workspace"
+      ],
+      "isEmptyWorkspace": true,
+      "shellType": "powershell"
+    }
+  }
+}

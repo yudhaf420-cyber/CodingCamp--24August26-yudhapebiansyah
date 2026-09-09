@@ -7,6 +7,8 @@ A beautiful, modern productivity dashboard built with **Tailwind CSS**, **HTML**
 ### 1. **Real-Time Clock & Greeting**
 - Live clock that updates every second with animated glow effect
 - Dynamic greeting based on time of day (Morning, Afternoon, Evening, Night)
+- **✏️ Edit Name Feature** - Click the edit button to personalize your name
+- Default message: "Set your name above" when no name is set
 - Current date display
 - Gradient text effects
 
@@ -36,12 +38,13 @@ A beautiful, modern productivity dashboard built with **Tailwind CSS**, **HTML**
 
 ### **Modern UI/UX**
 - ✅ **Tailwind CSS** - Utility-first CSS framework
-- ✅ **2-Column Responsive Layout** (Focus Timer | Tasks side-by-side)
-- ✅ **Glassmorphism Effects** - Frosted glass backdrop blur
+- ✅ **3-Column Responsive Layout** (Focus Timer | Tasks | Quick Links)
+- ✅ **Glassmorphism Effects** - Enhanced frosted glass with backdrop-blur-2xl
 - ✅ **Gradient Backgrounds** - Purple, pink, and cyan color scheme
-- ✅ **Smooth Animations** - Hover effects, transitions, and glow animations
-- ✅ **Custom Scrollbar** - Gradient styled scrollbar
+- ✅ **Smooth Animations** - Hover effects, scale transforms, and glow animations
+- ✅ **Custom Scrollbar** - Thin gradient styled scrollbar
 - ✅ **Google Fonts** - Inter (body) & Poppins (headings)
+- ✅ **Modal Dialog** - Beautiful name editor modal
 
 ### **Color Palette**
 - Primary: Purple (`#8b5cf6`)
@@ -57,10 +60,17 @@ A beautiful, modern productivity dashboard built with **Tailwind CSS**, **HTML**
 - Internet connection for Tailwind CDN (first load)
 
 ### How to Use
-1. Open `index.html` in your web browser
-2. Start adding tasks and links
-3. Use the focus timer to stay productive
-4. All your data is automatically saved locally
+1. **First Time**: Dashboard will show "Set your name above" (blank by default)
+2. **Set Your Name**: Click the ✏️ pencil button next to the greeting
+3. Open `index.html` in your web browser
+4. Start adding tasks and links
+5. Use the focus timer to stay productive
+6. All your data is automatically saved locally
+
+### Reset Your Name
+- **Option 1**: Click ✏️ → Click "Clear" button
+- **Option 2**: Open `clear-name.html` in browser to reset everything
+- **Option 3**: Browser Console → `localStorage.removeItem('userName')`
 
 ## 🛠️ Technical Details
 
@@ -104,14 +114,25 @@ Your data stays on your device and is never sent to any server.
 
 ## 🎨 Layout Overview
 
-### Desktop (Large Screens)
+### Desktop (XL Screens - 1280px+)
+```
+┌─────────────────────────────────────────────────────────┐
+│         Header (Clock, Date & Greeting + Edit)          │
+└─────────────────────────────────────────────────────────┘
+┌─────────────┬─────────────┬─────────────┐
+│ Focus Timer │  To-Do List │ Quick Links │
+│  (Column 1) │  (Column 2) │  (Column 3) │
+│             │             │             │
+└─────────────┴─────────────┴─────────────┘
+```
+
+### Tablet (MD Screens - 768px+)
 ```
 ┌─────────────────────────────────────────────┐
-│           Header (Clock & Greeting)         │
+│           Header                            │
 └─────────────────────────────────────────────┘
 ┌──────────────────────┬──────────────────────┐
 │   Focus Timer        │   To-Do List         │
-│   (Column 1)         │   (Column 2)         │
 └──────────────────────┴──────────────────────┘
 ┌─────────────────────────────────────────────┐
 │        Quick Links (Full Width)             │
@@ -126,9 +147,11 @@ Your data stays on your device and is never sent to any server.
 ## 🎯 Features Overview
 
 ### Responsive Design
-- 2-column grid on desktop (lg screens)
-- Single column on mobile/tablet
-- Smooth hover animations
+- 3-column grid on desktop (xl screens: Focus Timer | Tasks | Quick Links)
+- 2-column grid on tablets (md screens)
+- Single column on mobile
+- Cards stretch to equal heights with flexbox
+- Smooth hover animations with scale transforms
 - Touch-friendly interface
 
 ### Accessibility
@@ -163,10 +186,11 @@ let remainingSeconds = 30 * 60; // Change 30 to your preferred minutes
 ```
 
 ### Change User Name
-Your name is stored in localStorage. To change it, open browser console and run:
+Click the ✏️ edit button next to your greeting, or open browser console and run:
 ```javascript
 localStorage.setItem('userName', 'Your Name');
 ```
+Then refresh the page.
 
 ### Customize Colors
 Tailwind config in `index.html` head section:

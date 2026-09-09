@@ -1,0 +1,644 @@
+/* ========================================
+   Modern Dark Mode with Glassmorphism
+   ======================================== */
+
+/* Import modern Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Enhanced Color Palette */
+    --primary-color: #8b5cf6;
+    --primary-light: #a78bfa;
+    --primary-dark: #7c3aed;
+    --secondary-color: #06b6d4;
+    --accent-pink: #ec4899;
+    --accent-orange: #f97316;
+    --success-color: #10b981;
+    --danger-color: #ef4444;
+    --warning-color: #f59e0b;
+    
+    /* Glassmorphism Colors */
+    --glass-bg: rgba(30, 41, 59, 0.7);
+    --glass-border: rgba(148, 163, 184, 0.1);
+    --glass-hover: rgba(51, 65, 85, 0.8);
+    
+    /* Gradient Backgrounds */
+    --bg-gradient-1: #0f172a;
+    --bg-gradient-2: #1e1b4b;
+    --bg-gradient-3: #312e81;
+    
+    /* Text Colors */
+    --text-primary: #f1f5f9;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 0.75rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+    
+    /* Border Radius */
+    --radius-sm: 0.5rem;
+    --radius-md: 0.75rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
+    --radius-2xl: 2rem;
+    
+    /* Glassmorphism Shadows */
+    --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    --shadow-glow: 0 0 40px rgba(139, 92, 246, 0.3);
+    --shadow-glow-pink: 0 0 40px rgba(236, 72, 153, 0.3);
+    
+    /* Transitions */
+    --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, var(--bg-gradient-1) 0%, var(--bg-gradient-2) 50%, var(--bg-gradient-3) 100%);
+    background-attachment: fixed;
+    color: var(--text-primary);
+    min-height: 100vh;
+    padding: var(--spacing-lg);
+    line-height: 1.6;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Animated background particles effect */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 30%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(236, 72, 153, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(6, 182, 212, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Ensure content is above background effects */
+header, main {
+    position: relative;
+    z-index: 1;
+}
+
+/* ========================================
+   Header & Greeting Section - Glassmorphism
+   ======================================== */
+header {
+    text-align: center;
+    padding: var(--spacing-2xl) var(--spacing-lg);
+    margin-bottom: var(--spacing-2xl);
+    
+    /* Glassmorphism effect */
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    
+    border-radius: var(--radius-2xl);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-glass), var(--shadow-glow);
+    
+    transition: all var(--transition-base);
+}
+
+header:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-glass), var(--shadow-glow), 0 0 60px rgba(139, 92, 246, 0.4);
+}
+
+#time-display {
+    font-family: 'Poppins', sans-serif;
+    font-size: 4rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #a78bfa 0%, #ec4899 50%, #06b6d4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: var(--spacing-sm);
+    letter-spacing: 0.02em;
+    filter: drop-shadow(0 0 20px rgba(167, 139, 250, 0.5));
+    animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        filter: drop-shadow(0 0 20px rgba(167, 139, 250, 0.5));
+    }
+    50% {
+        filter: drop-shadow(0 0 30px rgba(236, 72, 153, 0.6));
+    }
+}
+
+#date-display {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-lg);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+}
+
+#greeting-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    color: var(--text-primary);
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ========================================
+   Main Content Layout - Glassmorphism Cards
+   ======================================== */
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+section {
+    /* Glassmorphism effect */
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    
+    padding: var(--spacing-2xl);
+    margin-bottom: var(--spacing-xl);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-glass);
+    
+    transition: all var(--transition-base);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle gradient overlay on hover */
+section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-pink), var(--secondary-color));
+    opacity: 0;
+    transition: opacity var(--transition-base);
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-glass), 0 0 50px rgba(139, 92, 246, 0.2);
+    background: var(--glass-hover);
+}
+
+section:hover::before {
+    opacity: 1;
+}
+
+section h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.75rem;
+    margin-bottom: var(--spacing-lg);
+    color: var(--text-primary);
+    font-weight: 700;
+    padding-bottom: var(--spacing-md);
+    border-bottom: 2px solid transparent;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-pink)) left bottom no-repeat;
+    background-size: 100% 2px;
+    letter-spacing: 0.02em;
+}
+
+section h4 {
+    font-size: 1.125rem;
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+    color: var(--text-secondary);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.875rem;
+}
+
+hr {
+    display: none;
+}
+
+/* ========================================
+   Focus Timer Section - Enhanced Design
+   ======================================== */
+#timer-display {
+    font-family: 'Poppins', sans-serif;
+    font-size: 5rem;
+    font-weight: 800;
+    text-align: center;
+    background: linear-gradient(135deg, var(--primary-light), var(--accent-pink));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: var(--spacing-xl) 0;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.05em;
+    filter: drop-shadow(0 0 30px rgba(139, 92, 246, 0.6));
+}
+
+section nav {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ========================================
+   Modern Button Styles with Glassmorphism
+   ======================================== */
+button {
+    padding: var(--spacing-md) var(--spacing-xl);
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.02em;
+    position: relative;
+    overflow: hidden;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width var(--transition-slow), height var(--transition-slow);
+}
+
+button:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+    transform: translateY(-1px);
+}
+
+#start-btn {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+}
+
+#start-btn:hover {
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.6);
+}
+
+#stop-btn {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white;
+    box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
+}
+
+#stop-btn:hover {
+    box-shadow: 0 8px 25px rgba(239, 68, 68, 0.6);
+}
+
+#reset-btn {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: white;
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+}
+
+#reset-btn:hover {
+    box-shadow: 0 8px 25px rgba(245, 158, 11, 0.6);
+}
+
+button[type="submit"] {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-pink));
+    color: white;
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+}
+
+button[type="submit"]:hover {
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.6);
+}
+
+/* ========================================
+   Modern Form Styles
+   ======================================== */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+label {
+    font-weight: 600;
+    color: var(--primary-light);
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+input[type="text"],
+input[type="url"] {
+    padding: var(--spacing-md) var(--spacing-lg);
+    font-size: 1rem;
+    border: 2px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    
+    /* Glassmorphism input */
+    background: rgba(15, 23, 42, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    
+    color: var(--text-primary);
+    transition: all var(--transition-base);
+    font-family: 'Inter', sans-serif;
+}
+
+input[type="text"]:focus,
+input[type="url"]:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background: rgba(15, 23, 42, 0.7);
+    box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.15), 0 0 20px rgba(139, 92, 246, 0.3);
+}
+
+input[type="text"]::placeholder,
+input[type="url"]::placeholder {
+    color: var(--text-muted);
+}
+
+/* ========================================
+   To-Do List - Modern Glass Design
+   ======================================== */
+#todo-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-lg);
+    
+    /* Glassmorphism for todo items */
+    background: rgba(15, 23, 42, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--glass-border);
+    transition: all var(--transition-base);
+    position: relative;
+}
+
+.todo-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-pink));
+    border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+    opacity: 0;
+    transition: opacity var(--transition-base);
+}
+
+.todo-item:hover {
+    background: rgba(51, 65, 85, 0.5);
+    border-color: var(--primary-light);
+    transform: translateX(5px);
+    box-shadow: 0 4px 20px rgba(139, 92, 246, 0.2);
+}
+
+.todo-item:hover::before {
+    opacity: 1;
+}
+
+.todo-item.completed {
+    opacity: 0.5;
+}
+
+.todo-item.completed .todo-text {
+    text-decoration: line-through;
+    color: var(--text-muted);
+}
+
+.todo-checkbox {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    accent-color: var(--primary-color);
+    border-radius: var(--radius-sm);
+}
+
+.todo-text {
+    flex: 1;
+    font-size: 1.05rem;
+    color: var(--text-primary);
+    word-break: break-word;
+    font-weight: 500;
+}
+
+.delete-btn {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background: linear-gradient(135deg, var(--danger-color), #dc2626);
+    color: white;
+    font-size: 0.875rem;
+    border-radius: var(--radius-md);
+    box-shadow: 0 2px 10px rgba(239, 68, 68, 0.3);
+}
+
+.delete-btn:hover {
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
+    box-shadow: 0 4px 15px rgba(239, 68, 68, 0.5);
+}
+
+/* ========================================
+   Quick Links - Modern Glass Style
+   ======================================== */
+#links-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+}
+
+.link-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    
+    /* Glassmorphism */
+    background: rgba(15, 23, 42, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--glass-border);
+    transition: all var(--transition-base);
+    position: relative;
+    overflow: hidden;
+}
+
+.link-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+    transform: translateX(-100%);
+    transition: transform var(--transition-base);
+}
+
+.link-item:hover {
+    background: rgba(51, 65, 85, 0.6);
+    border-color: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(6, 182, 212, 0.3);
+}
+
+.link-item:hover::before {
+    transform: translateX(0);
+}
+
+.link-button {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: 600;
+    transition: color var(--transition-fast);
+    font-size: 1rem;
+}
+
+.link-button:hover {
+    color: var(--primary-light);
+}
+
+.link-delete {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background: rgba(239, 68, 68, 0.8);
+    color: white;
+    font-size: 1rem;
+    border-radius: var(--radius-sm);
+    line-height: 1;
+    transition: all var(--transition-fast);
+}
+
+.link-delete:hover {
+    background: var(--danger-color);
+    transform: scale(1.1);
+}
+
+/* ========================================
+   Empty State - Enhanced
+   ======================================== */
+.empty-state {
+    text-align: center;
+    padding: var(--spacing-2xl);
+    color: var(--text-muted);
+    font-style: italic;
+    font-size: 1.05rem;
+    background: rgba(15, 23, 42, 0.3);
+    border-radius: var(--radius-lg);
+    border: 1px dashed var(--glass-border);
+}
+
+/* ========================================
+   Responsive Design
+   ======================================== */
+@media (max-width: 768px) {
+    body {
+        padding: var(--spacing-md);
+    }
+    
+    #time-display {
+        font-size: 2.5rem;
+    }
+    
+    #greeting-text {
+        font-size: 1.5rem;
+    }
+    
+    section {
+        padding: var(--spacing-lg);
+    }
+    
+    #timer-display {
+        font-size: 3rem;
+    }
+    
+    section nav {
+        flex-direction: column;
+    }
+    
+    button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    #time-display {
+        font-size: 2rem;
+    }
+    
+    #timer-display {
+        font-size: 2.5rem;
+    }
+    
+    section h3 {
+        font-size: 1.25rem;
+    }
+}
+
+/* ========================================
+   Accessibility
+   ======================================== */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+button:focus-visible,
+input:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
